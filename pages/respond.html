@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Respond</title>
 </head>
 <body>
-  
+
+  <header>
+    <h1>Accept or Decline a Request</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="respond.html">Respond</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Pending requests</h2>
+    <table border="1">
+      <caption>Requests waiting for an answer</caption>
+      <thead>
+        <tr>
+          <th scope="col">Request</th>
+          <th scope="col">Client</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>R-101</td><td>Abel Tesfaye</td><td>Mon, 23 Nov 2026</td><td>10:00</td><td>Consultation</td></tr>
+        <tr><td>R-102</td><td>Selam Bekele</td><td>Tue, 24 Nov 2026</td><td>14:30</td><td>Follow-up</td></tr>
+        <tr><td>R-103</td><td>Dawit Haile</td><td>Thu, 26 Nov 2026</td><td>09:00</td><td>Full session</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Your answer</h2>
+    <form action="mailto:Qetero@gmail.com" method="post" enctype="text/plain">
+      <p>
+        <label for="request">Request number (required):</label><br>
+        <select id="request" name="request" required>
+          <option value="">Choose a request</option>
+          <option value="R-101">R-101 &ndash; Abel Tesfaye</option>
+          <option value="R-102">R-102 &ndash; Selam Bekele</option>
+          <option value="R-103">R-103 &ndash; Dawit Haile</option>
+        </select>
+      </p>
+      <fieldset>
+        <legend>Decision (required)</legend>
+        <p>
+          <input type="radio" id="accept" name="decision" value="accept" required>
+          <label for="accept">Accept</label>
+        </p>
+        <p>
+          <input type="radio" id="decline" name="decision" value="decline">
+          <label for="decline">Decline</label>
+        </p>
+      </fieldset>
+      <p>
+        <label for="provider-email">Your email (required):</label><br>
+        <input type="email" id="provider-email" name="provider-email" required>
+      </p>
+      <p>
+        <label for="note">Message to the client:</label><br>
+        <textarea id="note" name="note" rows="4" cols="40"></textarea>
+      </p>
+      <p><button type="submit">Send answer</button></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>Questions? <a href="mailto:Qetero@gmail.com">Email us</a></p>
+  </footer>
 </body>
 </html>
