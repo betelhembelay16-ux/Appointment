@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book an Appointment</title>
 </head>
 <body>
-  
+
+  <header>
+    <h1>Book an Appointment</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="respond.html">Respond</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Request form</h2>
+    <p>Check the <a href="schedule.html">schedule</a> first, then fill in the form. Fields marked required must be completed.</p>
+
+    <form action="mailto:Qetero@gmail.com" method="post" enctype="text/plain">
+      <fieldset>
+        <legend>Your details</legend>
+        <p>
+          <label for="name">Full name (required):</label><br>
+          <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+          <label for="email">Email (required):</label><br>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="phone">Phone (optional):</label><br>
+          <input type="tel" id="phone" name="phone">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Appointment</legend>
+        <p>
+          <label for="service">Service:</label><br>
+          <select id="service" name="service">
+            <option value="consultation">Consultation (30 min)</option>
+            <option value="followup">Follow-up (15 min)</option>
+            <option value="session">Full session (60 min)</option>
+          </select>
+        </p>
+
+
+        <p>
+          <label for="date">Preferred date (required):</label><br>
+          <input type="date" id="date" name="date" required>
+        </p>
+
+
+        <p>
+          <label for="time">Preferred time (required):</label><br>
+          <input type="time" id="time" name="time" required>
+        </p>
+
+
+        <p>
+          <label for="reason">Reason for the visit:</label><br>
+          <textarea id="reason" name="reason" rows="4" cols="40"></textarea>
+        </p>
+      </fieldset>
+
+      <p>
+        <input type="checkbox" id="agree" name="agree" value="yes" required>
+        <label for="agree">I agree to be contacted about this request (required)</label>
+      </p>
+      <p><button type="submit">Send</button></p>
+    </form>
+  </main>
+
+
+  <footer>
+    <p>Questions? <a href="mailto:Qetero@gmail.com">Email us</a></p>
+  </footer>
 </body>
 </html>
